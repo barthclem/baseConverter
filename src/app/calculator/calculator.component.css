@@ -1,0 +1,22 @@
+:host {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.basePanel {
+  margin-top: 50px;
+  padding: 10px;
+  box-shadow: rgba(0, 0, 0, 0.3) 20px 20px 20px;
+  font-family: 'Lato Black', sans-serif;
+  color: crimson;
+}
+
+input .has-error {
+  border-color: crimson;
+}
+
+input .has-success {
+  border-color: aqua;
+}

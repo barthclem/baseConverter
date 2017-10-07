@@ -1,11 +1,67 @@
-<div class="container">
+<div class="container baseContainer ">
   <div class="row">
-    <div class="col-md-6 col-md-offset-4">
-      <form>
-        <div class="form-group">
-          
+    <div class="col-md-6 col-md-offset-3">
+      <div class="panel panel-default basePanel">
+        <div class="panel-heading">
+          <p class="panel-title">Base Converter</p>
         </div>
-      </form>
+        <div class="panel-body">
+          <form novalidate [formGroup] ="form">
+            <div class="form-group">
+              <input type="text"
+                     #binary
+                    (keyup)="binaryEntered(binary.value);"
+                     class="form-control"
+                   [ngClass]="{'has-error': binaryInput.invalid && (binaryInput.dirty || binaryInput.touched),
+                    'has-success': binaryInput.valid && (binaryInput.dirty || binaryInput.touched)
+                     }"
+                   placeholder="binary value"
+                   formControlName="binaryInput">
+              <p *ngIf="binaryInput.errors && (binaryInput.dirty || binaryInput.touched)">
+                only binary numbers are allowed
+              </p>
+            </div>
+            <div class="form-group">
+
+            <input type="text"
+                   #octal
+                   (keyup)="octalEntered(octal.value)"
+                   class="form-control "
+                   [ngClass]="{'has-error': octalInput.invalid && (octalInput.dirty || octalInput.touched),
+                    'has-success': octalInput.valid && (octalInput.dirty || octalInput.touched)
+                     }"
+                   placeholder="octal value"
+                  formControlName="octalInput">
+              <p  *ngIf="octalInput.errors && (octalInput.dirty || octalInput.touched)">
+                only octal numbers are allowed
+              </p>
+          </div>
+            <div class="form-group">
+                <input type="text"
+                       #decimal
+                       (keyup)="decimalEntered(decimal.value)"
+                       class="form-control" [ngClass]="{'has-danger': decimalInput.invalid && (decimalInput.dirty || decimalInput.touched),
+                    'has-success': decimalInput.valid && (decimalInput.dirty || decimalInput.touched)
+                     }"
+                       placeholder="decimal value"
+                       formControlName="decimalInput">
+              <p *ngIf="decimalInput.errors && (decimalInput.dirty || decimalInput.touched)">only decimal numbers are allowed</p>
+            </div>
+            <div class="form-group">
+                <input type="text"
+                       #hexadecimal
+                       (keyup)="hexadecimalEntered(hexadecimal.value)"
+                       class="form-control" [ngClass]="{'has-danger': hexadecimalInput.invalid && (hexadecimalInput.dirty || hexadecimalInput.touched),
+                    'has-success': hexadecimalInput.valid && (hexadecimalInput.dirty || hexadecimalInput.touched)
+                     }"
+                       placeholder="hexadecimal value"
+                       formControlName="hexadecimalInput">
+                <p *ngIf="hexadecimalInput.errors && (hexadecimalInput.dirty || hexadecimalInput.touched)">only hexadecimal numbers are allowed</p>
+            </div>
+          </form>
+        </div>
+      </div>
+
     </div>
   </div>
 </div>
