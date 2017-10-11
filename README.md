@@ -1,6 +1,5 @@
 # BinaryConverter
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.4.
+This project is an angular4 project that shows the conversion between number bases 2,8,10 and 16.
 
 ## Development server
 
